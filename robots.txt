@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://van-os.uk/sitemap.xml
