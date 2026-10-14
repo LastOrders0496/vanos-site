@@ -91,7 +91,10 @@ footer{background:var(--navy);color:#a9c4ec;text-align:center;padding:28px 0;fon
 footer a{color:var(--aqua)}
 #toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,120px);background:var(--navy);color:#fff;border:3px solid var(--gold);padding:10px 18px;border-radius:12px;font-weight:700;transition:transform .25s;z-index:9}
 #toast.on{transform:translate(-50%,0)}
+.dg{display:grid;gap:24px;grid-template-columns:1fr}
+.dg iframe{width:100%;max-width:350px;height:400px;border:0;border-radius:12px;background:#2b2d31}
 @media(min-width:700px){
+.dg{grid-template-columns:1.3fr 1fr;align-items:center}
 nav .hide{display:inline}
 .cards,.vanilla{grid-template-columns:repeat(3,1fr)}
 .hero{padding:70px 0 110px}
@@ -162,11 +165,14 @@ nav .hide{display:inline}
 <a class="btn alt" href="https://minecraft-server-list.com/server/523526/" target="_blank" rel="noopener">Minecraft-Server-List</a>
 </div></div></section>
 
-<section id="discord"><div class="wrap">
+<section id="discord"><div class="wrap dg"><div>
 <h2>Come say hi</h2>
 <p class="intro">We're not just looking to build players, we want to build a community - where input is truly valued, listened to, and built upon. If you have an idea or something isn't working, tell us.</p>
 <a class="btn disc" href="https://discord.gg/NKFRWTVTzy" target="_blank" rel="noopener">Join our Discord</a>
+</div>
+<iframe title="VanOS Discord server widget" src="https://discord.com/widget?id=1401251721543684168&amp;theme=dark" loading="lazy" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
 </div></section>
+
 
 <section class="faq about" id="faq"><div class="wrap">
 <h2>Questions</h2>
