@@ -88,18 +88,22 @@ nav .hide{display:inline}
 .top{background:linear-gradient(180deg,var(--navy),var(--navy2));color:#fff;text-align:center;padding:40px 0 44px}
 .top h1{margin:0 0 8px}.top p{max-width:640px;margin:0 auto;color:#d6e6ff;font-size:1.1rem}
 nav a.on{color:var(--gold)}
-.price{font-size:2rem;font-weight:900}.price small{font-size:.9rem;font-weight:600;color:#40567a}
+.price{font-size:1.7rem;font-weight:900;white-space:nowrap;line-height:1.2;margin:0 0 4px}.price small{font-size:.9rem;font-weight:600;color:#40567a;margin-left:4px}
 .card ul{padding-left:20px;margin:10px 0 14px}
 .card .tag{background:var(--aqua)}
-.cards.three{grid-template-columns:1fr}
+.cards.three{grid-template-columns:1fr;align-items:stretch}
+.cards.three .card{display:flex;flex-direction:column;padding:22px}
+.cards.three .card h3{margin:0 0 6px;min-height:1.6em}
+.cards.three .card ul{flex:1}
+.cards.three .card .cta{margin-top:auto}
 .rew{background:var(--navy);color:#fff;border-radius:var(--r);padding:16px 20px;margin-top:10px}.rew b{color:var(--gold)}
 .note{font-size:.92rem;color:#40567a}
 .step{background:#fff;border:3px solid var(--navy);border-radius:var(--r);padding:16px 20px;margin-bottom:22px}
 .step input{font:inherit;border:3px solid var(--navy);border-radius:12px;padding:10px 14px;width:100%;max-width:300px;margin:6px 0}
 .step input[aria-invalid=true]{border-color:#b3261e}
-#msg{font-weight:700;min-height:1.5em;margin:10px 0 0}
+#msg{font-weight:700;min-height:1.5em;margin:18px 0 0}
 #msg.err{color:#b3261e}
-.btn[disabled]{opacity:.55;cursor:not-allowed}
+.btn[disabled]{background:#e8e2d0;color:#5a6a85;border-color:#8b97ab;box-shadow:none;cursor:not-allowed}
 button.btn{font:inherit;font-weight:800;cursor:pointer}
 .once{display:flex;flex-wrap:wrap}
 .legal{font-size:.88rem;color:#a9c4ec;max-width:760px;margin:0 auto}
@@ -127,27 +131,26 @@ button.btn{font:inherit;font-weight:800;cursor:pointer}
 <p style="margin:0">If you're not lucky enough to win in that prize draw, you will receive another super special prize to thank you for voting everyday!</p></div></div></section>
 
 <section class="about" id="support"><div class="wrap"><h2>Support VanOS</h2>
-<p class="intro">Contributions help pay for the server. Perks are cosmetic and recognition only. You can see everything before you pay.</p>
+<p class="intro">Contributions help pay for the server. Perks are cosmetic and recognition only.</p>
 <div class="step"><label for="mcname"><b>Step 1: your Minecraft name</b></label><br>
 <input id="mcname" autocomplete="off" autocapitalize="off" spellcheck="false" maxlength="16" placeholder="Your Java username" aria-describedby="namehelp">
 <div class="note" id="namehelp">Java Edition name, 3 to 16 letters, numbers or underscores. Tebex checks the account when you sign in to pay on its secure page.</div></div>
 <div class="cards three">
 <article class="card"><h3>Contributor 1</h3><div class="price">£5 <small>per month</small></div>
-<ul><li>Name colour</li><li>Particle trail</li><li>Hat</li><li>Custom join message</li><li>Discord role</li></ul>
-<button class="btn buy" type="button" data-pkg="contributor_1" disabled>Subscribe</button></article>
-<article class="card"><h3>Contributor 2 <span class="tag">Includes C1</span></h3><div class="price">£10 <small>per month</small></div>
-<ul><li>Everything in Contributor 1</li><li>Distinct name colour</li><li>More trails</li><li>Glow outline</li><li>Armour stand posing</li><li>Highlighted thank-you name</li></ul>
-<button class="btn buy" type="button" data-pkg="contributor_2" disabled>Subscribe</button>
-<p class="note">Already on Contributor 1? Buying this upgrades you now, and Tebex adjusts the price for the time left.</p></article>
+<ul><li>Discord role</li><li>Name colour in game</li><li>Custom join message</li><li>Particle trail (4 styles)</li><li>Wear any item as a hat</li><li>Your name on the thank-you list</li><li>Vote on community event themes</li></ul>
+<div class="cta"><button class="btn buy" type="button" data-pkg="contributor_1" disabled>Subscribe</button></div></article>
+<article class="card"><h3>Contributor 2</h3><div class="price">£10 <small>per month</small></div>
+<ul><li>Everything in Contributor 1</li><li>A distinct name colour</li><li>6 more trail styles (10 in all)</li><li>Glow outline</li><li>Armour stand posing</li><li>Highlighted on the thank-you list</li></ul>
+<p class="note">Already on Contributor 1? Contact us and we'll sort out the upgrade.</p>
+<div class="cta"><button class="btn buy" type="button" data-pkg="contributor_2" disabled>Subscribe</button></div></article>
 <article class="card"><h3>Just because</h3><div class="price">£5 · £10 · £20 <small>one-off</small></div>
 <ul><li>A thank-you. No perks, no rank.</li></ul>
-<div class="once"><button class="btn alt buy" type="button" data-pkg="once_5" disabled>£5</button><button class="btn alt buy" type="button" data-pkg="once_10" disabled>£10</button><button class="btn alt buy" type="button" data-pkg="once_20" disabled>£20</button></div></article>
+<div class="cta once"><button class="btn alt buy" type="button" data-pkg="once_5" disabled>£5</button><button class="btn alt buy" type="button" data-pkg="once_10" disabled>£10</button><button class="btn alt buy" type="button" data-pkg="once_20" disabled>£20</button></div></article>
 </div>
 <p id="msg" role="status" aria-live="polite"></p>
-<p class="note">Perks are cosmetic and recognition only. Cancel on Tebex any time; perks remain until the paid period ends.</p></div></section>
+</div></section>
 
 <section id="discord"><div class="wrap"><h2>Come say hi</h2>
-<p class="intro">Ideas, problems, or just chat. Contributors get their Discord role here.</p>
 <a class="btn disc" href="https://discord.gg/NKFRWTVTzy" target="_blank" rel="noopener">Join our Discord</a></div></section>
 
 </main>
