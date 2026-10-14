@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>VanOS | Vanilla Minecraft SMP, Skyblock &amp; Plots</title>
-<meta name="description" content="Looking for a vanilla Minecraft SMP? VanOS runs an untouched Mojang jar: vanilla gameplay, QoL on the side. Play SMP, start a private Skyblock island, or use Plots. Java: play.van-os.uk">
+<meta name="description" content="Looking for a vanilla Minecraft SMP? VanOS runs an untouched Mojang jar: vanilla gameplay, QoL on the side. Play SMP, start a private Skyblock island, use Plots or jump into Minigames. Java: play.van-os.uk">
 <link rel="canonical" href="https://van-os.uk/">
 <meta name="theme-color" content="#0b1f3a">
 <meta name="robots" content="index,follow,max-image-preview:large">
@@ -12,7 +12,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="VanOS">
 <meta property="og:title" content="VanOS | Vanilla Minecraft SMP, Skyblock &amp; Plots">
-<meta property="og:description" content="An untouched Mojang jar, vanilla gameplay, QoL on the side. SMP, private Skyblock islands and Plots. Java: play.van-os.uk">
+<meta property="og:description" content="An untouched Mojang jar, vanilla gameplay, QoL on the side. SMP, private Skyblock islands, Plots and Minigames. Java: play.van-os.uk">
 <meta property="og:url" content="https://van-os.uk/">
 <meta property="og:image" content="https://van-os.uk/og-image.png">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
@@ -31,7 +31,7 @@
 {"@type":"Question","name":"What does vanilla mean on VanOS?","acceptedAnswer":{"@type":"Answer","text":"The server runs an untouched Mojang jar with no Paper and no plugins. Extra features are powered by datapacks and a custom server wrapper, so gameplay stays vanilla with quality-of-life extras on the side."}},
 {"@type":"Question","name":"Can I have my own Skyblock island?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every Skyblock player gets a private island of their own, and you can invite friends to co-op."}},
 {"@type":"Question","name":"What are Plots for?","acceptedAnswer":{"@type":"Answer","text":"Plots let you plan out your builds before committing, then take your ideas into Survival."}},
-{"@type":"Question","name":"What are the server rules?","acceptedAnswer":{"@type":"Answer","text":"No griefing, stealing or raiding, and no PvP unless both sides are up for it."}}
+{"@type":"Question","name":"What are the server rules?","acceptedAnswer":{"@type":"Answer","text":"1. Look after each other. This is intended to be a community server - help new players, share, build together. 2. No griefing. Don't break, take or change anything that isn't yours. 3. No stealing. An unlocked chest is not a free chest. 4. Respect in chat. No harassment, hate speech, spam or advertising. 5. PvP by agreement only. No spawn camping, no trapping. 6. No cheats. No x-ray, clients, blacklisted modifications, dupes or exploits - report bugs, don't use them. 7. Build with consideration. No lag machines or offensive builds. 8. Staff calls are final in the moment. Disagree? Raise it properly after, not in chat. 9. If it ruins someone else's fun, don't do it. Common sense covers the rest."}}
 ]}]}
 </script>
 <style>
@@ -68,7 +68,7 @@ h2{font-size:clamp(1.5rem,5vw,2.1rem);margin:0 0 8px;font-weight:900}
 .card{background:#fff;border:3px solid var(--navy);border-radius:var(--r);padding:22px;box-shadow:0 5px 0 var(--navy)}
 .card h3{margin:0 0 6px;font-size:1.3rem}
 .card .tag{display:inline-block;font-size:.75rem;font-weight:800;letter-spacing:.6px;background:var(--gold);border-radius:8px;padding:2px 9px;margin-bottom:10px}
-.card:nth-child(2) .tag{background:var(--aqua)}.card:nth-child(3) .tag{background:#9be37f}
+.card:nth-child(2) .tag{background:var(--aqua)}.card:nth-child(3) .tag{background:#c9a7ff}.card:nth-child(4) .tag{background:#9be37f}
 .card p{margin:0}
 .band{background:var(--navy);color:#fff}
 .band .intro{color:#b9d0f2}
@@ -82,7 +82,7 @@ h2{font-size:clamp(1.5rem,5vw,2.1rem);margin:0 0 8px;font-weight:900}
 .btn:hover{background:#ffd666}.btn.alt{background:#fff}.btn.disc{background:#7a8cff;color:#fff}
 .btn:active{transform:translateY(3px);box-shadow:0 1px 0 var(--navy)}
 .votes{display:flex;flex-wrap:wrap}
-.rules{margin:0;padding-left:1.2em}.rules li{margin-bottom:8px}
+.rules{margin:8px 0 0;padding-left:1.4em}.rules li{margin-bottom:6px}
 .faq details{background:#fff;border:3px solid var(--navy);border-radius:14px;padding:12px 16px;margin-bottom:10px}
 .faq summary{font-weight:800;cursor:pointer}
 .faq p{margin:8px 0 0}
@@ -96,7 +96,7 @@ footer a{color:var(--aqua)}
 @media(min-width:700px){
 .dg{grid-template-columns:1.3fr 1fr;align-items:center}
 nav .hide{display:inline}
-.cards,.vanilla{grid-template-columns:repeat(3,1fr)}
+.vanilla{grid-template-columns:repeat(3,1fr)}.cards{grid-template-columns:repeat(2,1fr)}
 .hero{padding:70px 0 110px}
 }
 @media(prefers-reduced-motion:no-preference){.card{transition:transform .15s}.card:hover{transform:translateY(-4px)}}
@@ -106,7 +106,7 @@ nav .hide{display:inline}
 <body>
 <header class="nav"><div class="wrap">
 <a class="logo" href="/" aria-label="VanOS home"><b>Van</b><i>OS</i></a>
-<nav aria-label="Main"><a class="hide" href="#play">What we offer</a><a href="#join">Join</a><a class="hide" href="#vote">Vote</a><a href="/contribute/">Contribute</a><a href="#discord">Discord</a></nav>
+<nav aria-label="Main"><a class="hide" href="#play">What we offer</a><a href="#join">Join</a><a href="/contribute/">Contribute</a><a href="#discord">Discord</a></nav>
 </div></header>
 
 <main>
@@ -120,11 +120,12 @@ nav .hide{display:inline}
 </div></div>
 
 <section id="play"><div class="wrap">
-<h2>One address, three ways to play</h2>
+<h2>One address, four ways to play</h2>
 <p class="intro">Everyone arrives at SMP and can hop between the others in a click.</p>
 <div class="cards">
-<article class="card"><span class="tag">SMP</span><h3>Survival, with neighbours</h3><p>Make a home, work on the build you keep putting off, and find people to play alongside. An active staff team is on hand.</p></article>
-<article class="card"><span class="tag">SKYBLOCK</span><h3>An island of your own</h3><p>Every player gets a private island. Start with a small patch and an oak tree, work your way up to the Nether, and invite friends to co-op.</p></article>
+<article class="card"><span class="tag">SMP</span><h3>Survival, with neighbours</h3><p>Make a home, work on the build you keep putting off, and find people to play alongside. No griefing or stealing, and an active staff team is on hand.</p></article>
+<article class="card"><span class="tag">SKYBLOCK</span><h3>An island of your own</h3><p>Every player gets a private island. Start with a small patch and an oak tree, work your way up through the Nether and into an End that is custom to your island, and invite friends to co-op.</p></article>
+<article class="card"><span class="tag">MINIGAMES</span><h3>Quick games, same address</h3><p>Jump into Kit PvP or run a parkour course. It is all datapack-powered with no plugins, so you can play a round and head straight back.</p></article>
 <article class="card"><span class="tag">PLOTS</span><h3>Plan before you commit</h3><p>Plan out your builds before committing. Try the idea on your own plot, then take it into Survival once it feels right.</p></article>
 </div></div></section>
 
@@ -134,7 +135,7 @@ nav .hide{display:inline}
 <div class="vanilla">
 <div class="pt"><b>Untouched Mojang jar</b>No Paper, no plugins. The server file is the one Mojang ships.</div>
 <div class="pt"><b>Vanilla gameplay</b>Survival works the way you know it. Nothing swaps out the core game.</div>
-<div class="pt"><b>QoL on the side</b>Useful extras like homes, shops and a menu are powered by datapacks and a custom server wrapper.</div>
+<div class="pt"><b>QoL on the side</b>Useful extras are powered by datapacks and a custom server wrapper.</div>
 </div></div></section>
 
 <section class="join" id="join"><div class="wrap">
@@ -146,24 +147,6 @@ nav .hide{display:inline}
 <li>Enter <strong>play.van-os.uk</strong> and hit Done. See you at spawn.</li>
 </ol>
 </div></section>
-
-<section id="rules"><div class="wrap">
-<h2>Server rules</h2>
-<p class="intro">Two simple ones, so everyone can enjoy their time here.</p>
-<ul class="rules">
-<li>No griefing, stealing or raiding.</li>
-<li>No PvP unless both sides are up for it.</li>
-</ul>
-</div></section>
-
-<section id="vote" class="about"><div class="wrap">
-<h2>Give us a vote</h2>
-<p class="intro">Votes help other players find VanOS. It's optional, and thank you if you do. You can also type <code>!vote</code> in game.</p>
-<div class="votes">
-<a class="btn" href="https://minecraftservers.org/server/693531" target="_blank" rel="noopener">MinecraftServers.org</a>
-<a class="btn alt" href="https://minecraft-mp.com/server-s364267/" target="_blank" rel="noopener">Minecraft-MP</a>
-<a class="btn alt" href="https://minecraft-server-list.com/server/523526/" target="_blank" rel="noopener">Minecraft-Server-List</a>
-</div></div></section>
 
 <section id="discord"><div class="wrap dg"><div>
 <h2>Come say hi</h2>
@@ -180,7 +163,7 @@ nav .hide{display:inline}
 <details><summary>What does vanilla mean here?</summary><p>We run an untouched Mojang jar with no Paper and no plugins. Extra features are powered by datapacks and a custom server wrapper, so gameplay stays vanilla with quality-of-life extras on the side.</p></details>
 <details><summary>Can I have my own Skyblock island?</summary><p>Yes. Every Skyblock player gets a private island, and you can invite friends to co-op.</p></details>
 <details><summary>What are Plots for?</summary><p>Plots are for planning out your builds before committing, then taking your ideas into Survival.</p></details>
-<details><summary>What are the server rules?</summary><p>No griefing, stealing or raiding, and no PvP unless both sides are up for it.</p></details>
+<details><summary>What are the server rules?</summary><div><ol class="rules"><li>Look after each other. This is intended to be a community server - help new players, share, build together.</li><li>No griefing. Don't break, take or change anything that isn't yours.</li><li>No stealing. An unlocked chest is not a free chest.</li><li>Respect in chat. No harassment, hate speech, spam or advertising.</li><li>PvP by agreement only. No spawn camping, no trapping.</li><li>No cheats. No x-ray, clients, blacklisted modifications, dupes or exploits - report bugs, don't use them.</li><li>Build with consideration. No lag machines or offensive builds.</li><li>Staff calls are final in the moment. Disagree? Raise it properly after, not in chat.</li><li>If it ruins someone else's fun, don't do it. Common sense covers the rest.</li></ol></div></details>
 <details><summary>Who runs VanOS?</summary><p>VanOS is run by LastOrders and a friendly staff team.</p></details>
 <details><summary>How do I contact the owner?</summary><p>Email <a href="mailto:vanosowner@gmail.com">vanosowner@gmail.com</a>, or message us on Discord for anything about the server.</p></details>
 </div></section>
