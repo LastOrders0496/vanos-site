@@ -146,9 +146,10 @@ fetch('/api/contribute/thanks').then(function(r){if(!r.ok)throw 0;return r.json(
   if(!/^[A-Za-z0-9_]{3,16}$/.test(n))return;
   var li=document.createElement('li'),ph=document.createElement('span'),img=new Image(28,28);
   ph.className='ph';img.alt='';img.loading='lazy';img.referrerPolicy='no-referrer';
-  img.onload=function(){ph.replaceWith(img)};
+  // Lazy images must be in the page before the browser will request them.
+  img.onerror=function(){img.replaceWith(ph)};
   img.src='https://minotar.net/helm/'+encodeURIComponent(n)+'/28.png';
-  li.appendChild(ph);li.appendChild(document.createTextNode(n));wall.appendChild(li);
+  li.appendChild(img);li.appendChild(document.createTextNode(n));wall.appendChild(li);
  });
 }).catch(fail);
 })();

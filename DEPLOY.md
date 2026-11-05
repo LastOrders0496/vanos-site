@@ -49,3 +49,22 @@ Caddy fetches the https certificate itself once DNS has propagated. Caddy's user
 ## Updating later
 Edit /opt/vanos-site/index.html or run sudo git pull there. No restart needed.
 Edit the Minecraft version line ("26.3") in the hero when you upgrade.
+
+## Thank-you head images
+The Thank you page renders lazy head images directly in the player card. Keep
+images attached to the document while loading: a detached lazy image may never
+start its request. A failed image is replaced with the existing same-size square;
+the player's name stays visible. Requests still use the existing name-only skin
+service with no referrer. This does not change contributor eligibility, opt-in,
+UUID identity, the API response, or any player records.
+
+For this static-site fix, pull this repo in `/opt/vanos-site` and refresh the page
+(hard refresh if the browser still has the old HTML cached). No panel update,
+Minecraft restart, jar replacement, or Caddy reload is required.
+
+### Browser regression checks
+Run `npm ci`, `npx playwright install chromium`, then `npm test`.
+For an existing Chrome installation, use `CHROME_PATH=/path/to/chrome npm test`.
+Tests use synthetic players and intercepted image/API responses, never production
+player records. They cover actual lazy-image requests, failed-image fallback,
+mobile width, invalid names, empty opt-in lists, and API failure.
