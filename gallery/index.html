@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Community gallery | VanOS</title>
+<meta name="description" content="Builds by the VanOS community: Survival, Skyblock, Plots and Minigames. Share yours through our Discord. Java: play.van-os.uk">
+<link rel="canonical" href="https://van-os.uk/gallery/">
+<meta name="theme-color" content="#0b1f3a">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="VanOS">
+<meta property="og:title" content="Community gallery | VanOS">
+<meta property="og:description" content="Builds by the people who play VanOS. Share yours through our Discord. Java: play.van-os.uk">
+<meta property="og:url" content="https://van-os.uk/gallery/">
+<meta property="og:image" content="https://van-os.uk/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+:root{--navy:#0b1f3a;--navy2:#12305a;--teal:#2fd0c4;--aqua:#55e6f0;--gold:#ffc83d;--cream:#fff8e6;--ink:#10223d;--r:18px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--cream)}
+a{color:inherit}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+header.nav{background:var(--navy);color:#fff}
+header.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
+.logo{font-weight:900;font-size:1.35rem;text-decoration:none;letter-spacing:.5px}
+.logo b{color:var(--gold)}.logo i{font-style:normal;color:var(--aqua)}
+nav a{color:#cfe3ff;text-decoration:none;margin-left:14px;font-size:.9rem;font-weight:600;white-space:nowrap}
+nav a:hover{color:var(--gold)}
+nav a[aria-current]{color:var(--gold)}
+nav .hide{display:none}
+.hero{background:linear-gradient(180deg,var(--navy) 0,var(--navy2) 100%);color:#fff;text-align:center;padding:44px 0 90px;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;left:0;right:0;bottom:0;height:34px;
+background:linear-gradient(90deg,#5fbf4a 0 25%,#4aa63a 25% 50%,#5fbf4a 50% 75%,#4aa63a 75%);background-size:80px 100%;border-top:6px solid #7ddc62}
+.badge{display:inline-block;background:rgba(47,208,196,.15);border:2px solid var(--teal);color:var(--aqua);border-radius:99px;padding:3px 14px;font-size:.85rem;font-weight:700}
+h1{font-size:clamp(2rem,7vw,3.4rem);line-height:1.1;margin:16px 0 12px;font-weight:900}
+h1 span{color:var(--gold)}
+.lead{max-width:640px;margin:0 auto;color:#d6e6ff;font-size:1.1rem}
+section{padding:54px 0}
+h2{font-size:clamp(1.5rem,5vw,2.1rem);margin:0 0 8px;font-weight:900}
+.intro{margin:0 0 28px;color:#40567a;max-width:640px}
+.filters{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 18px}
+.filters button{font:inherit;font-weight:800;font-size:.9rem;border:3px solid var(--navy);border-radius:99px;background:#fff;color:var(--navy);padding:8px 16px;cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--navy);color:#fff}
+.filters button:hover{background:#eef4ff}
+.filters button[aria-pressed="true"]:hover{background:var(--navy2)}
+.filters button:focus-visible{outline:3px solid var(--aqua);outline-offset:3px}
+.count{margin:0 0 22px;color:#40567a;font-size:.92rem}
+.ggrid{display:grid;gap:18px;grid-template-columns:1fr;margin:0;padding:0;list-style:none}
+.gcard{background:#fff;border:3px solid var(--navy);border-radius:var(--r);overflow:hidden;box-shadow:0 5px 0 var(--navy)}
+.gcard .shot{display:block;width:100%;padding:0;border:0;background:var(--navy2);cursor:zoom-in}
+.gcard .shot img{display:block;width:100%;aspect-ratio:8/5;object-fit:cover}
+.gcard .shot:focus-visible{outline:3px solid var(--aqua);outline-offset:-3px}
+.gcard .cap{padding:14px 18px 16px}
+.gcard .tag{display:inline-block;font-size:.75rem;font-weight:800;letter-spacing:.6px;color:var(--navy);background:var(--gold);border-radius:8px;padding:2px 9px;margin-bottom:8px}
+.gcard.mode-skyblock .tag{background:var(--aqua)}
+.gcard.mode-minigames .tag{background:#c9a7ff}
+.gcard.mode-plots .tag{background:#9be37f}
+.gcard h3{margin:0 0 2px;font-size:1.15rem}
+.gcard .by{margin:0;color:#40567a;font-size:.92rem}
+.empty{background:#fff;border:3px dashed var(--navy);border-radius:var(--r);padding:34px 22px;text-align:center}
+.empty p{margin:0 0 6px;font-weight:800;font-size:1.15rem}
+.empty span{color:#40567a}
+.band{background:var(--navy);color:#fff}
+.band .intro{color:#b9d0f2}
+.band h2{color:#fff}
+.steps{padding-left:0;list-style:none;counter-reset:s;display:grid;gap:12px;margin:0 0 22px}
+.steps li{counter-increment:s;background:#fff;color:var(--ink);border:3px solid var(--navy);border-radius:var(--r);padding:14px 16px 14px 62px;position:relative}
+.steps li:before{content:counter(s);position:absolute;left:14px;top:50%;transform:translateY(-50%);width:34px;height:34px;border-radius:9px;background:var(--gold);font-weight:900;display:grid;place-items:center}
+.btn{display:inline-block;text-decoration:none;font-weight:800;border-radius:14px;padding:12px 20px;border:3px solid var(--navy);background:var(--gold);color:var(--navy);box-shadow:0 4px 0 var(--navy);margin:4px 8px 8px 0}
+.btn:hover{background:#ffd666}.btn.alt{background:#fff}.btn.disc{background:#7a8cff;color:#fff}
+.btn:active{transform:translateY(3px);box-shadow:0 1px 0 var(--navy)}
+.btn:focus-visible,a:focus-visible{outline:3px solid var(--aqua);outline-offset:3px}
+.note{color:#b9d0f2;font-size:.92rem;margin:6px 0 0}
+.note a{color:var(--aqua)}
+footer{background:var(--navy);color:#a9c4ec;text-align:center;padding:28px 0;font-size:.9rem}
+footer a{color:var(--aqua)}
+.lb{position:fixed;inset:0;background:rgba(11,31,58,.92);display:flex;align-items:center;justify-content:center;flex-direction:column;padding:20px;z-index:20}
+.lb[hidden]{display:none}
+.lb img{max-width:min(100%,1100px);max-height:76vh;height:auto;border:3px solid var(--gold);border-radius:12px;background:var(--navy2)}
+.lb .lbcap{color:#fff;text-align:center;margin:12px 0 0;max-width:700px}
+.lb .lbcap b{color:var(--gold)}
+.lb .lbbtn{position:absolute;top:14px;right:16px;font:inherit;font-weight:800;font-size:1rem;background:var(--gold);color:var(--navy);border:3px solid var(--navy);border-radius:12px;padding:8px 14px;cursor:pointer}
+.lb .lbprev,.lb .lbnext{position:absolute;top:50%;transform:translateY(-50%);font:inherit;font-weight:900;font-size:1.4rem;background:#fff;color:var(--navy);border:3px solid var(--navy);border-radius:12px;width:48px;height:56px;cursor:pointer}
+.lb .lbprev{left:10px}.lb .lbnext{right:10px}
+.lb .lbbtn:hover,.lb .lbprev:hover,.lb .lbnext:hover{background:var(--aqua)}
+@media(min-width:700px){
+nav .hide{display:inline}
+.ggrid{grid-template-columns:repeat(2,1fr)}
+.hero{padding:70px 0 110px}
+}
+@media(min-width:1000px){
+.ggrid{grid-template-columns:repeat(3,1fr)}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media(max-width:699px){nav a{margin-left:10px;font-size:.82rem}}
+</style>
+</head>
+<body>
+<header class="nav"><div class="wrap">
+<a class="logo" href="/" aria-label="VanOS home"><b>Van</b><i>OS</i></a>
+<nav aria-label="Main"><a class="hide" href="/#play">What we offer</a><a href="/#join">Join</a><a href="/contribute/">Contribute</a><a href="/gallery/" aria-current="page">Gallery</a><a href="/#discord">Discord</a></nav>
+</div></header>
+
+<main>
+<div class="hero"><div class="wrap">
+<span class="badge">Made here. Shared by you.</span>
+<h1>Small beginnings.<br><span>Brilliant builds.</span></h1>
+<p class="lead">A home for the places, projects and little details that make VanOS yours.</p>
+</div></div>
+
+<section id="album"><div class="wrap">
+<h2>The community album</h2>
+<p class="intro">Every picture here was shared by a player and checked by a moderator before it went up.</p>
+<div class="filters" id="filters" role="group" aria-label="Filter gallery by game mode" hidden></div>
+<p class="count" id="count" hidden></p>
+<ul class="ggrid" id="grid" hidden></ul>
+<div class="empty" id="empty" hidden>
+<p>Nothing here yet.</p>
+<span>The first build in the album could be yours - share it through our Discord below.</span>
+</div>
+<noscript><div class="empty"><p>The gallery needs JavaScript to load.</p><span>Your browser has it turned off.</span></div></noscript>
+</div></section>
+
+<section class="band" id="share"><div class="wrap">
+<h2>Your build belongs in the picture</h2>
+<p class="intro">Share a screenshot in our Discord and, once a moderator has checked it, it can appear here.</p>
+<ol class="steps">
+<li>Post your screenshot in <strong>#show-off</strong> on Discord, with a line about what it is.</li>
+<li>Press <strong>Submit to gallery</strong> on the reply under your post. Only you can submit your own post, and submitting means you're happy for it to be shown on this page.</li>
+<li>Staff approve every shot before it goes up. Shots showing coordinates, chat or other players' nameplates cannot be approved.</li>
+<li>After submitting, use the buttons to choose your linked Minecraft name or No name (anonymous). Link Minecraft before submitting if you want named credit.</li>
+</ol>
+<a class="btn disc" href="https://discord.gg/NKFRWTVTzy" target="_blank" rel="noopener">Join our Discord</a>
+<p class="note">Changed your mind about your photo? Ask staff in Discord to remove it from the gallery. Copies elsewhere can remain.</p>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+<p><strong>VanOS</strong> &middot; Vanilla Minecraft SMP, Skyblock &amp; Plots &middot; Java <code>play.van-os.uk</code></p>
+<p>Run by LastOrders &middot; <a href="https://discord.gg/NKFRWTVTzy" rel="noopener">Discord</a> &middot; Contact: <a href="mailto:vanosowner@gmail.com">vanosowner@gmail.com</a></p>
+<p>Not an official Minecraft service. Not approved by or associated with Mojang or Microsoft.</p>
+</div></footer>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Photo viewer">
+<button class="lbbtn" id="lbclose" type="button">Close</button>
+<button class="lbprev" id="lbprev" type="button" aria-label="Previous photo">&larr;</button>
+<img id="lbimg" alt="">
+<p class="lbcap" id="lbcap"></p>
+<button class="lbnext" id="lbnext" type="button" aria-label="Next photo">&rarr;</button>
+</div>
+
+<script>
+(function(){
+var MODES=['All','Survival','Skyblock','Plots','Minigames'];
+var grid=document.getElementById('grid'),filters=document.getElementById('filters'),
+count=document.getElementById('count'),empty=document.getElementById('empty'),
+lb=document.getElementById('lb'),lbimg=document.getElementById('lbimg'),
+lbcap=document.getElementById('lbcap'),lbclose=document.getElementById('lbclose'),
+lbprev=document.getElementById('lbprev'),lbnext=document.getElementById('lbnext');
+var items=[],filter='All',viewing=-1,lastFocus=null;
+
+function esc(s){var d=document.createElement('div');d.textContent=s==null?'':String(s);return d.innerHTML.replace(/"/g,'&quot;').replace(/'/g,'&#39;')}
+
+function shown(){return items.filter(function(it){return filter==='All'||it.mode===filter})}
+
+function renderFilters(){
+filters.innerHTML='';
+MODES.forEach(function(m){
+var b=document.createElement('button');
+b.type='button';b.textContent=m;
+b.setAttribute('aria-pressed',filter===m?'true':'false');
+b.addEventListener('click',function(){filter=m;render()});
+filters.appendChild(b)});
+}
+
+function render(){
+renderFilters();
+var list=shown();
+filters.hidden=items.length===0;
+grid.hidden=list.length===0;
+empty.hidden=!(items.length===0&&filter==='All');
+count.hidden=items.length===0;
+if(items.length>0){
+count.textContent=list.length===items.length
+? items.length+(items.length===1?' build':' builds')+' in the album'
+: 'Showing '+list.length+' of '+items.length+' builds';
+if(list.length===0){
+grid.hidden=true;empty.hidden=false;
+empty.querySelector('p').textContent='Nothing here for '+filter+' yet.';
+empty.querySelector('span').textContent='Try another mode, or share the first one through our Discord below.';
+}else{
+empty.hidden=true;
+empty.querySelector('p').textContent='Nothing here yet.';
+empty.querySelector('span').textContent='The first build in the album could be yours - share it through our Discord below.';
+}
+}
+grid.innerHTML='';
+list.forEach(function(it){
+var li=document.createElement('li');
+li.className='gcard mode-'+String(it.mode||'').toLowerCase();
+li.innerHTML='<button type="button" class="shot"><img loading="lazy" decoding="async" src="'+esc(it.src)+'" alt="'+esc(it.alt||it.title||'Player build')+'"></button>'+
+'<div class="cap"><span class="tag">'+esc(String(it.mode||'').toUpperCase())+'</span>'+
+'<h3>'+esc(it.title||'Untitled build')+'</h3>'+
+(it.credit?'<p class="by">by '+esc(it.credit)+'</p>':'')+'</div>';
+li.querySelector('.shot').addEventListener('click',function(ev){open(items.indexOf(it),ev.currentTarget)});
+grid.appendChild(li)});
+}
+
+function open(i,fromEl){
+if(i<0||i>=items.length)return;
+viewing=i;lastFocus=fromEl||document.activeElement;
+var it=items[i];
+lbimg.src=it.src;
+lbimg.alt=it.alt||it.title||'Player build';
+lbcap.innerHTML='<b>'+esc(it.title||'Untitled build')+'</b>'+
+(it.credit?' &middot; by '+esc(it.credit):'')+(it.mode?' &middot; '+esc(it.mode):'');
+lb.hidden=false;
+document.body.style.overflow='hidden';
+lbclose.focus();
+}
+function close(){
+lb.hidden=true;lbimg.removeAttribute('src');
+document.body.style.overflow='';
+if(lastFocus&&lastFocus.focus)lastFocus.focus();
+}
+function step(d){
+if(items.length===0)return;
+viewing=(viewing+d+items.length)%items.length;
+open(viewing,lastFocus);
+}
+lbclose.addEventListener('click',close);
+lbprev.addEventListener('click',function(){step(-1)});
+lbnext.addEventListener('click',function(){step(1)});
+lb.addEventListener('click',function(e){if(e.target===lb)close()});
+document.addEventListener('keydown',function(e){
+if(lb.hidden)return;
+if(e.key==='Escape')close();
+else if(e.key==='ArrowLeft')step(-1);
+else if(e.key==='ArrowRight')step(1);
+});
+
+fetch('/gallery/media/gallery.json',{cache:'no-cache'}).then(function(r){
+if(r.status===404)return {items:[]};
+if(!r.ok)throw new Error('manifest '+r.status);
+return r.json();
+}).then(function(data){
+items=(data&&Array.isArray(data.items)?data.items:[]).filter(function(it){
+return it&&typeof it.src==='string'&&/^\/gallery\/media\/img\/[0-9]+\.webp$/.test(it.src)&&MODES.indexOf(it.mode)>0;
+});
+render();
+}).catch(function(){
+items=[];render();
+count.hidden=false;
+count.textContent='The album could not be loaded just now - please try again later.';
+empty.hidden=true;
+});
+})();
+</script>
+</body>
+</html>

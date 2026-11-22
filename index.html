@@ -101,12 +101,18 @@ nav .hide{display:inline}
 }
 @media(prefers-reduced-motion:no-preference){.card{transition:transform .15s}.card:hover{transform:translateY(-4px)}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.gpreview{display:flex;gap:14px;padding:0;margin:0 0 18px;list-style:none;overflow-x:auto}
+.gpreview li{flex:0 0 auto}
+.gpreview a{display:block;border:3px solid var(--navy);border-radius:14px;overflow:hidden;box-shadow:0 4px 0 var(--navy);background:var(--navy2)}
+.gpreview img{display:block;width:220px;height:140px;object-fit:cover}
+.gpreview a:focus-visible{outline:3px solid var(--aqua);outline-offset:3px}
+@media(max-width:699px){nav a{margin-left:10px;font-size:.82rem}}
 </style>
 </head>
 <body>
 <header class="nav"><div class="wrap">
 <a class="logo" href="/" aria-label="VanOS home"><b>Van</b><i>OS</i></a>
-<nav aria-label="Main"><a class="hide" href="#play">What we offer</a><a href="#join">Join</a><a href="/contribute/">Contribute</a><a href="#discord">Discord</a></nav>
+<nav aria-label="Main"><a class="hide" href="#play">What we offer</a><a href="#join">Join</a><a href="/contribute/">Contribute</a><a href="/gallery/">Gallery</a><a href="#discord">Discord</a></nav>
 </div></header>
 
 <main>
@@ -128,6 +134,13 @@ nav .hide{display:inline}
 <article class="card"><span class="tag">MINIGAMES</span><h3>Quick games, same address</h3><p>Jump into Kit PvP or run a parkour course. It is all datapack-powered with no plugins. Play a round and head straight back.</p></article>
 <article class="card"><span class="tag">PLOTS</span><h3>Plan before you commit</h3><p>Plan out your builds before committing. Try the idea on your own plot, then take it into Survival once it feels right.</p></article>
 </div></div></section>
+
+<section id="gallery"><div class="wrap">
+<h2>Community gallery</h2>
+<p class="intro">Builds by the people who play here. Take a look, or share your own through our Discord.</p>
+<ul class="gpreview" id="gpreview" hidden></ul>
+<a class="btn" href="/gallery/">Open the gallery</a>
+</div></section>
 
 <section class="band" id="vanilla"><div class="wrap">
 <h2>What we mean by vanilla</h2>
@@ -183,6 +196,16 @@ if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(a)
 function fb(){var x=document.createElement('textarea');x.value=a;x.style.position='fixed';x.style.opacity=0;document.body.appendChild(x);x.select();try{document.execCommand('copy')}catch(e){}document.body.removeChild(x);done()}
 })})();
 </script>
+<script>
+(function(){var ul=document.getElementById('gpreview');if(!ul)return;
+function esc(s){var d=document.createElement('div');d.textContent=s==null?'':String(s);return d.innerHTML.replace(/"/g,'&quot;').replace(/'/g,'&#39;')}
+fetch('/gallery/media/gallery.json',{cache:'no-cache'}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(data){
+var items=(data&&Array.isArray(data.items)?data.items:[]).filter(function(it){return it&&typeof it.src==='string'&&/^\/gallery\/media\/img\/[0-9]+\.webp$/.test(it.src)}).slice(0,6);
+if(!items.length)return;
+ul.innerHTML=items.map(function(it){return '<li><a href="/gallery/"><img loading="lazy" decoding="async" src="'+esc(it.src)+'" alt="'+esc(it.alt||it.title||'Player build')+'"></a></li>'}).join('');
+ul.hidden=false;
+}).catch(function(){});
+})();
+</script>
 </body>
 </html>
-
